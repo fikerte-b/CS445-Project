@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.6.7/rxjs.umd.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <title>Music Single Page</title>
+    <link href="./myStyleSheet.css" rel ="stylesheet">
+    <script src="./app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div id="headerId">
+            <div id="logoId"><img style="width:50px" src="./images/imgLog.png">MIU Music Station</div>
+            <div id="searchIdDiv">
+                <input id="searchId" type="text" placeholder="Search...">
+                <input id="searchBtnId" type="button" value="Search">
+            </div>
+            <div id="loginId">
+                <input id="userNameId" type="text" placeholder="User Name">
+                <input id="passwordId" type="text" placeholder="Password">
+                <input id="loginBtnId" type="button" value="log in">
+                <div id="errorId"></div>
+            </div>
+            
+            <input id="logoutBtnId" type="button" value="log out">
+        </div>
+        <div id="bodyId">WELCOME TO MIU MUSIC STATION</div>
+        <!-- <div id="musicDisplayId"><table class="table caption-top table-secondary table-striped"></table></div> -->
+        <div id="playListId"></div>
+        <div id="footerId"></div>
+    </div>
+</body>
+</html>
