@@ -87,7 +87,8 @@ window.onload = function(){
          <th scope="row">${i+1}</th>
           <td>${data[i].title}</td>
           <td>${data[i].releaseDate}</td>
-          <td id="actionBtnId" onclick = 'addToPlayList(${i+1});'>+</td>
+          <td><button onclick = 'addToPlayList(${i+1})'>+</button></td>
+          
           
 
     </tr>`;
@@ -162,11 +163,44 @@ window.onload = function(){
     logoutBtn.style.display = 'none';
     loginEl.style.display = 'block';
   }
-function searchFn(){
- if(searchTxt.value == ""){
-}else if(data.title.includes(searchTxt.value)){
+async function searchFn(){
+const searchValue = searchTxt.value;
+ if(searchValue == ""){
+    fetchMusic();
 
- }else{}
+ }else{
+     bodyEl.value = "";
+    const response = await fetch(`${PATH}/api/music?search=${searchValue}`, {
+        headers: {
+            'Authorization': `Bearer ${localStorage.getItem('accessToken')}`
+        }
+     })
+    const data =  await response.json();
+    console.log("processed searchdata", data)
+    let html =` 
+    <table class="table caption-top table-secondary table-striped">
+    <caption>Search result</caption>
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Release Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id="rowId">
+         <th scope="row">1</th>
+          <td>${data[0].title}</td>
+          <td>${data[0].releaseDate}</td>
+          
+     </tr>
+   
+
+     </tbody>
+     </table>`;
+     bodyEl.innerHTML = html;
+     searchTxt.value = "";
+ }
 }
  function addToPlayList(el){
      console.log(el);
