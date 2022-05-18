@@ -18,14 +18,15 @@ body{
     font-weight: bolder;
 }
 #loginId{
-        width: 30%;
+       /* width: 30%; */
         display: flex;
         align-items: center;
         justify-content: space-around;
+        padding: 10px;
 
 }
 #bodyId{
-    text-align: center;
+    
     padding-top: 100px;
     font-size: xx-large;
     color: rgb(76, 201, 243);
@@ -47,5 +48,12 @@ body{
 #rowId{
     font-size:medium;
 }
+
+
+/* #footerId{
+    
+    position: sticky;
+    bottom: 0;
+} */
 
 
