@@ -308,7 +308,7 @@ async function removePlayList(id) {
     </tr>
   </thead>
   <tbody>`;
-
+  
   for (let i = 0; i < data.length; i++) {
     let eachMusic = `
     <tr id="rowId">
